@@ -1,1 +1,16 @@
+import Text from "mo:base/Text";
+import Nat from "mo:base/Nat";
 
+actor {
+  var userName: Text = "";
+  
+  // Método setUserName que recibe un texto como parámetro
+  public func setUserName(newName: Text) : async () {
+    userName := newName;
+  };
+
+  // Método getUserName que regresa el texto previamente pasado a setUserName
+  public query func getUserName() : async Text {
+    return userName;
+  };
+};
