@@ -1,0 +1,43 @@
+import Text from "mo:base/Text";
+import Nat from "mo:base/Nat";
+import Array from "mo:base/Array";
+
+actor {
+  // Definición del tipo Student
+  type Student = {
+    id : Nat;
+    firstName : Text;
+    lastName : Text;
+    age : Nat;
+    isActive : Bool; 
+  };
+
+  var studentList : [Student] = [];  
+
+  public func addStudent(id : Nat, firstName : Text, lastName : Text, age : Nat, isActive : Bool) : async () {
+    let newStudent : Student = {
+      id = id;
+      firstName = firstName;
+      lastName = lastName;
+      age = age;
+      isActive = isActive;  
+    };
+    studentList := Array.append(studentList, [newStudent]);  
+  };
+
+  public query func getStudents() : async [Student] {
+    return studentList;  
+  };
+
+  public query func getStudentById(studentId : Nat) : async ?Student {
+    return Array.find<Student>(studentList, func (s : Student) : Bool {
+      s.id == studentId
+    });
+  };
+
+  public func deleteStudent(studentId : Nat) : async () {  
+    studentList := Array.filter<Student>(studentList, func (s : Student) : Bool {
+      s.id != studentId
+    });
+  };
+};
