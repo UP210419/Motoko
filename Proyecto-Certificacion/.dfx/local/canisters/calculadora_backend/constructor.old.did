@@ -1,0 +1,37 @@
+service : {
+  abs: (float64) -> (float64);
+  acosDegrees: (float64) -> (opt float64);
+  add: (float64, float64) -> (float64);
+  asinDegrees: (float64) -> (opt float64);
+  atanDegrees: (float64) -> (float64);
+  binaryToDecimal: (nat) -> (nat);
+  calculateFactorial: (nat) -> (nat);
+  combinations: (nat, nat) -> (nat);
+  convertDegreToRadians: (float64) -> (float64);
+  convertRadianToRDegres: (float64) -> (float64);
+  cosDegrees: (float64) -> (float64);
+  decimalToBinary: (nat) -> (nat);
+  decimalToOctal: (nat) -> (nat);
+  divide: (float64, float64) -> (opt float64);
+  exp: (float64) -> (float64);
+  hypot: (float64, float64) -> (float64);
+  ln: (float64) -> (opt float64);
+  log: (float64) -> (opt float64);
+  logBase: (float64, float64) -> (opt float64);
+  multiply: (float64, float64) -> (float64);
+  nthRoot: (float64, float64) -> (opt float64);
+  octalToDecimal: (nat) -> (nat);
+  partialFactorial: (nat, nat) -> (nat);
+  percentage: (float64, float64) -> (float64);
+  permutations: (nat, nat) -> (nat);
+  power: (float64, float64) -> (float64);
+  quadraticFormula: (float64, float64, float64) ->
+   (opt record {
+          float64;
+          float64;
+        });
+  sinDegrees: (float64) -> (float64);
+  sqrt: (float64) -> (opt float64);
+  subtract: (float64, float64) -> (float64);
+  tanDegrees: (float64) -> (float64);
+}
